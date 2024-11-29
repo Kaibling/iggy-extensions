@@ -1,0 +1,42 @@
+linters:
+  # Disable all linters.
+  # Default: false
+  # Enable specific linter
+  # https://golangci-lint.run/usage/linters/#enabled-by-default
+  # Enable all available linters.
+  # Default: false
+  enable-all: true
+
+  disable:
+    - exportloopref  # deprecated
+    - execinquery # deprecated
+    - gomnd # deprecated
+    - wrapcheck
+    - varnamelen
+    - exhaustruct
+    - godox
+    - depguard
+    - containedctx
+    - gomoddirectives
+    - ireturn
+  # Disable specific linter
+  # https://golangci-lint.run/usage/linters/#disabled-by-default
+  # Enable only fast linters from enabled linters set (first run won't be fast)
+  # Default: false
+  fast: false
+linters-settings:
+  tagliatelle:
+    case:
+      use-field-name: true
+      rules:
+        # Any struct tag type can be used.
+        # Support string case: `camel`, `pascal`, `kebab`, `snake`, `upperSnake`, `goCamel`, `goPascal`, `goKebab`, `goSnake`, `upper`, `lower`, `header`.
+        json: snake
+        yaml: camel
+        xml: camel
+        toml: camel
+        bson: camel
+        avro: snake
+        mapstructure: kebab
+        env: upperSnake
+        envconfig: upperSnake

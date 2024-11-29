@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  app:
+   container_name: iggy-extensions
+   build: .
+   volumes:
+    - "../.:/iggy-extensions"
+   working_dir: "/iggy-extensions"
+   command: "tail -f /dev/null"
+   extra_hosts:
+      - "host.local:host-gateway"

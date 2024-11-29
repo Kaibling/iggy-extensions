@@ -1,0 +1,19 @@
+{
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+  "workspaceFolder": "/iggy-extensions",
+  "runArgs": [
+    "--add-host=host.local:host-gateway"
+  ],
+    "customizations": {
+      "vscode": {
+        "extensions": [
+            "golang.Go",
+            "streetsidesoftware.code-spell-checker"
+        ]
+      }
+    },
+    "remoteEnv": {
+      "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}/.."
+  }
+  }
